@@ -23,7 +23,7 @@ Parents should register/login to input their kids favorite gifts
 4. Like/Recommended button on each gift so that the most popular gifts are showed first
 
 
-## Technologies: REACT, HTML, CSS, AJAX, RUBY ON RAILS
+## Technologies: REACT, HTML, CSS, AJAX, RUBY ON RAILS, POSTGRESQL
 
 
 ## Wireframe
@@ -35,7 +35,7 @@ Parents should register/login to input their kids favorite gifts
 
 ### User Page
 
-![Image](Profile PageWireframe.png)
+![Image](ProfilePageWireframe.png)
 
 ### New Gift Form
 
@@ -45,7 +45,7 @@ Parents should register/login to input their kids favorite gifts
 ![Image](LoginRegistrationPageWireframe.png)
 
 ### Entity Relationship Diagram (ERD) 
-![Image](gifthorse-erd2.png)
+![Image](gifthorse-erd3.png)
 
 ## My Journey
 1. The scrolling gallery on the Show Gift by Age Page and implementing Auth will be challenging
