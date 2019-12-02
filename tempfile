@@ -1,0 +1,24 @@
+rails g model User first_name:string email: string password_digest: string
+rails g model Age age:integer image_url:string
+rails g model Gift name:string image_url:string amazon_url:string for_girls:boolean for_boys:boolean price_range:string
+rails g migration CreateJoinTableGiftAge gift age
+
+
+class Gift < ApplicationRecord
+  has_and_belongs_to_many :ages
+end
+class Age < ApplicationRecord
+  has_and_belongs_to_many :gifts
+end
+class User < ApplicationRecord
+  has_many :gifts
+end
+
+******* routes *******
+get '/list_by_age', to: 'ages#index'
+get '/list_by_age/:age_id/gifts', to: 'gifts#index_by_age'
+get '/gifts', to: 'gifts#/index_by_user'
+
+post '/gifts', to: 'gifts#add_new'
+put '/gifts/:giftid', to: 'gifts#update'
+destroy '/gifts/:giftid', to: 'gifts#destroy'
