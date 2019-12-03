@@ -12,15 +12,17 @@ class GiftsController < ApplicationController
   
   # get '/gifts', to: 'gifts#/index_by_user'
   def index_by_user
-    @age = Age.find(params[:age_id])
-    @gifts = @age.gifts
+    @gifts = @current_user.gifts
     render json: @gifts, status: :ok
   end
 
-  # post '/gifts', to: 'gifts#add_new'
+  # post '/ages/:age_id/gifts', to: 'gifts#add_new'
   def add_new
+    @age = Age.find(params[:age_id])
     @gift = Gift.new(gift_params)
-    if @gift.save
+    @current_user.gifts << @gift
+    # @current_user.gifts << @gift  this shovels and saves at the same time
+    if @age.gifts << @gift
       render json: {gift: @gift}, status: :created
     else
       render json: { error: @gift.errors }, status: :unprocessible_entity

@@ -1,22 +1,62 @@
-.App {
+@font-face {
+  font-family: "AbjectFailure";
+  src: url("./AbjectFailure.otf") format("otf");
+}
+
+h1, h2, h3 {
+  font-family: "AbjectFailure";
+}
+
+header {
+  font-family: 'AbjectFailure', cursive;
+  text-align: left;
+  /* padding: 2rem; */
+  /* margin-left: 5vw; */
+  
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  /* top: 0; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/******** HOMEPAGE STYLING ********/
+#ages-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 10vh;
+  min-height: 90vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.profile-div {
+  padding-top: 10vh;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#gifts-profile-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.create-form, .new-gift-form {
+  padding-top: 10vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: left;
 }
 
-.App-link {
-  color: #09d3ac;
+.age img, #new-gift-img {
+  height: 250px;
+  width: 200px;
+  object-fit: cover;
+  /* width: 100%; */
+  margin: 20px;
 }

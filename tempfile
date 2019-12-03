@@ -1,6 +1,6 @@
-rails g model User first_name:string email: string password_digest: string
+rails g model User first_name:string email:string password_digest:string
 rails g model Age age:integer image_url:string
-rails g model Gift name:string image_url:string amazon_url:string for_girls:boolean for_boys:boolean price_range:string
+rails g model Gift name:string image_url:string amazon_url:string for_girls:boolean for_boys:boolean price_range:string user:references
 rails g migration CreateJoinTableGiftAge gift age
 
 

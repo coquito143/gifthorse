@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   get '/list_by_age', to: 'ages#index'
   get '/list_by_age/:age_id/gifts', to: 'gifts#index_by_age'
-  get '/gifts', to: 'gifts#/index_by_user'
+  get '/gifts', to: 'gifts#index_by_user'
   
-  post '/gifts', to: 'gifts#add_new'
+  post '/ages/:age_id/gifts', to: 'gifts#add_new'
   put '/gifts/:giftid', to: 'gifts#update'
-  destroy '/gifts/:giftid', to: 'gifts#destroy'
+  delete '/gifts/:giftid', to: 'gifts#destroy'
 
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
