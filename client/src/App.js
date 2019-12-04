@@ -236,6 +236,7 @@ class App extends Component {
           render={(props) => (
             <EditGiftForm
               giftId={props.match.params.giftId}
+              currentUser={this.state.currentUser}
             />)}
         />
 

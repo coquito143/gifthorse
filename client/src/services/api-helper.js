@@ -57,7 +57,7 @@ export const readSingleGift  = async (id) => {
 }
 
 export const updateGift = async (id, data) => {
-  const resp = await api.put(`/gifts/${id}`, { gift: data })
+  const resp = await api.put(`/gifts/${id}`, data)
   return resp.data
 }
 

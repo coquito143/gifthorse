@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-import { readSingleGift, readUserGifts } from '../services/api-helper';
+import { readSingleGift, updateGift } from '../services/api-helper';
 import { withRouter } from 'react-router-dom';
 
 class EditGiftForm extends React.Component {
@@ -67,8 +67,9 @@ class EditGiftForm extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault()
     const formData = this.state.formData
-    const response = await axios.put(`http://localhost:3000/gifts/${this.props.giftId}`, formData)
-    this.props.history.push('/')
+    const response = await updateGift(this.props.giftId, formData)
+    debugger
+    this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 
   render() {

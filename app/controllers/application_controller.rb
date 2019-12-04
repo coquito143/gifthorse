@@ -15,6 +15,8 @@ class ApplicationController < ActionController::API
   def authorize_request
     header = request.headers['Authorization']
     header = header.split(' ').last if header
+    p header
+    p "HEEERRREEEEE"
     begin
       @decoded = decode(header)
       @current_user = User.find(@decoded[:user_id])
