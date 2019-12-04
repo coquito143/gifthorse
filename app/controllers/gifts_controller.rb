@@ -1,19 +1,24 @@
 class GiftsController < ApplicationController
-  before_action :set_gift, only: [:update, :destroy]
+  before_action :set_gift, only: [:update, :destroy, :index_single_gift]
   before_action :authorize_request, except: %i[index_by_age]
 
-  # get '/list_by_age/:age_id/gifts', to: 'gifts#index_by_age'
+  # get '/ages/:age_id/gifts', to: 'gifts#index_by_age'
   def index_by_age
     @age = Age.find(params[:age_id])
     @gifts = @age.gifts
-    render json: @gifts, status: :ok
+    render json: @gifts, include: :ages, status: :ok
   end
 
   
   # get '/gifts', to: 'gifts#/index_by_user'
   def index_by_user
     @gifts = @current_user.gifts
-    render json: @gifts, status: :ok
+    render json: @gifts, include: :ages, status: :ok
+  end
+
+  # get '/gifts/:id', to: 'gifts#index_single_gift'
+  def index_single_gift
+    render json: @gift, include: :ages, status: :ok
   end
 
   # post '/ages/:age_id/gifts', to: 'gifts#add_new'
@@ -42,7 +47,7 @@ class GiftsController < ApplicationController
     end
   end
 
-  # destroy '/gifts/:giftid', to: 'gifts#destroy'
+  # destroy '/gifts/:id', to: 'gifts#destroy'
   def destroy
     if @gift.user == @current_user
       @gift.destroy
@@ -57,7 +62,6 @@ class GiftsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_gift
       @gift = Gift.find(params[:id])
-      puts @gift
     end
 
     # Only allow a trusted parameter "white list" through.

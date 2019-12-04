@@ -4,7 +4,9 @@ import { withRouter } from 'react-router';
 
 import AgesList from './components/AgesList'
 import GiftProfile from './components/GiftProfile';
+import GiftsByAge from './components/GiftsByAge'
 // import GiftPage from './components/GiftPage';
+import EditGiftForm from './components/EditGiftForm'
 import CreateGift from './components/CreateGift'
 import Login from './components/Login'
 import Register from './components/Register'
@@ -30,9 +32,11 @@ class App extends Component {
       giftForm: {
         name: "",
         image_url: "",
-        amazon_url: ""
+        amazon_url: "",
+        for_girls: false,
+        for_boys: false
       },
-      giftAge: 0,
+      giftAge: 1,
       currentUser: null,
       authFormData: {
         // first_name: "",
@@ -67,7 +71,7 @@ class App extends Component {
         image_url: "",
         amazon_url: ""
       },
-      giftAge: 0
+      giftAge: 1
     }))
   }
 
@@ -93,10 +97,23 @@ class App extends Component {
 
   handleFormChange = (e) => {
     const { name, value } = e.target;
+   
     if (name === "giftAge") {
       this.setState({
-        [name]: value
+        [name]: parseInt(value)
       })
+     
+    }
+
+    else if ((name === "for_girls") || (name === "for_boys")) {
+      if (value === "on") {
+        this.setState(prevState => ({
+          giftForm: {
+            ...prevState.giftForm,
+            [name]: !prevState.giftForm[name]
+          }
+        }))
+      }
     }
     else {
       this.setState(prevState => ({
@@ -123,7 +140,7 @@ class App extends Component {
         image_url: "",
         amazon_url: ""
       },
-      giftAge: 0
+      giftAge: 1
     })
   }
 
@@ -136,6 +153,7 @@ class App extends Component {
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/")
   }
 
   handleRegister = async (e) => {
@@ -149,6 +167,7 @@ class App extends Component {
     this.setState({
       currentUser: null
     })
+    this.props.history.push("/")
   }
 
   authHandleChange = (e) => {
@@ -175,14 +194,23 @@ class App extends Component {
           <Login
             handleLogin={this.handleLogin}
             handleChange={this.authHandleChange}
-            formData={this.state.authFormData} />)} />
+            formData={this.state.authFormData}
+            currentUser={this.state.currentUser}
+          />)} />
         <Route exact path="/register" render={() => (
           <Register
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
         <Route exact path="/users/:userid" render={() => (
-          <GiftProfile currentUser={this.state.currentUser} />)} />
+          <GiftProfile
+            currentUser={this.state.currentUser}
+            deleteGift={this.deleteGift}
+          />)} />
+
+        <Route exact path="/gifts-by-age/:ageId" render={(props) => (
+          <GiftsByAge ageId={props.match.params.ageId} />)} />
+
         {/* <Route
           exact path="/"
           render={() => (
@@ -202,6 +230,15 @@ class App extends Component {
               giftAge={this.state.giftAge}
               newGift={this.newGift} />
           )} />
+        
+        <Route
+          exact path="/gifts/:giftId/edit"
+          render={(props) => (
+            <EditGiftForm
+              giftId={props.match.params.giftId}
+            />)}
+        />
+
         {/* <Route
           path="/gifts/:id"
           render={(props) => {

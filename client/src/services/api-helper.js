@@ -32,10 +32,8 @@ export const verifyUser = async () => {
 
 export const createGift = async (data, age) => {
   age = parseInt(age);
-  debugger;
   const resp = await api.post(`/ages/${age}/gifts`, { gift: data })
   return resp.data
-  debugger;
 }
 
 export const readAllGifts = async () => {
@@ -45,6 +43,16 @@ export const readAllGifts = async () => {
 
 export const readUserGifts = async () => {
   const resp = await api.get('/gifts')
+  return resp.data
+}
+
+export const readGiftsbyAge = async (id) => {
+  const resp = await api.get(`/ages/${id}/gifts`)
+  return resp.data
+}
+
+export const readSingleGift  = async (id) => {
+  const resp = await api.get(`/gifts/${id}`)
   return resp.data
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EditGift from './EditGift'
+import EditGift from './EditGiftForm'
 import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
