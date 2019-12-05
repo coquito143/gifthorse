@@ -10,6 +10,9 @@ import EditGiftForm from './components/EditGiftForm'
 import CreateGift from './components/CreateGift'
 import Login from './components/Login'
 import Register from './components/Register'
+import './App.css';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection'
 
 import {
   createGift,
@@ -21,8 +24,7 @@ import {
   verifyUser
 } from './services/api-helper'
 
-import './App.css';
-import Header from './components/Header';
+
 
 class App extends Component {
   constructor(props) {
@@ -188,6 +190,8 @@ class App extends Component {
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
         />
+        <Route exact path="/" render={() => (
+          <HeroSection />)} />
         <Route exact path="/" render={() => (
           <AgesList />)} />
         <Route exact path="/login" render={() => (

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 function CreateGift(props) {
   return (
     <div className="create-form" >
-      <h2>Create a new gift</h2>
+      <h2 className="green-color">Create a new gift</h2>
       <form className="new-gift-form" onSubmit={props.newGift}>
         <p>Name:</p>
         <input

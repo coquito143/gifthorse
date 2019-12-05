@@ -33,7 +33,7 @@ class GiftProfile extends React.Component {
             alt="Create a new gift"
             src="https://image.flaticon.com/icons/png/512/14/14980.png"
             className="plus-sign" />
-          <h3>Add a new gift</h3>
+          <h2 className="green-color remove-top-margin">Add a new gift</h2>
         </Link>
 
         <div id="gifts-profile-list">

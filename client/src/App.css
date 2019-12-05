@@ -1,41 +1,206 @@
+/******** GENERAL STYLING ********/
+
 @font-face {
   font-family: "AbjectFailure";
-  src: url("./AbjectFailure.otf") format("otf");
+  src: url("./AbjectFailure.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Alpenstube";
+  src: url("./Alpenstube.otf") format("opentype");
 }
 
 h1, h2, h3 {
   font-family: "AbjectFailure";
 }
 
+body {
+  font-family: "Alpenstube", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: 'AbjectFailure', cursive;
+  font-size: 1em;
+  margin: 1vw;
+  width: 100px;
+  height: 30px;
+  border-radius: 20.5px;
+  background-color: #cb0002;
+  font-family: Alpenstube;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  color: #ffffff;
+}
+
+/******** HEADER STYLING ********/
 header {
   font-family: 'AbjectFailure', cursive;
-  text-align: left;
+  /* text-align: left; */
   /* padding: 2rem; */
   /* margin-left: 5vw; */
   /* position: fixed; */
-  height: 10vh;
+  height: 12vh;
   width: 100%;
   /* top: 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
+
+.logo-img {
+  margin: 10px;
+  width: 152px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.welcome-div a:hover {
+  color: #25dd6a;
+  border-bottom: 1px solid #cb0002;
+}
+
+#hero-pic {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 150px 0 0 0; 
+}
+
+.Oval {
+  width: 163px;
+  height: 42px;
+  border-radius: 25.5px;
+  border: solid 1px #030303;
+}
+
+.remove-top-margin {
+  margin-top: 0;
+}
+
+/******** HERO STYLING ********/
+#hero-section {
+  display: grid;
+  grid-template-columns: 15% 25% 60%;
+  text-align: center;
+}
+
+#hero-text h1 {
+    font-family: AbjectFailure;
+    font-size: 42px;
+    line-height: 1.21;
+    color: #cb0002;
+
+}
+
+#hero-text-h2 {
+  font-family: Alpenstube;
+  font-size: 23px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+#green-border {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  top: -80px;
+  background-color: #25dd6a;
+}
+/******** GIFT BY AGE STYLING ********/
+.show-gifts-oval {
+  width: 153px;
+  height: 41px;
+  border-radius: 20.5px;
+  background-color: #cb0002;
+  font-family: Alpenstube;
+  font-size: 23px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.57px;
+  color: #ffffff;
+}
+
+#ages-heading-div {
+  color: #cb0002;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -80px;
+}
+
+#ages-heading-div img {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.age img, #new-gift-img {
+  height: 150px;
+  width: 150px;
+  margin: 50px 0 0 0;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+
+.age img:hover, #new-gift-img:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.age h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 
 /******** HOMEPAGE STYLING ********/
 #ages-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: 10vh;
-  min-height: 90vh;
   text-align: center;
+  position: relative;
+  top: -80px;
 }
 
+#border {
+  width: 1034px;
+  height: 1px;
+  border: solid 1px #979797;
+  position: relative;
+  top: -80px;
+  margin: 0 auto;
+}
 .profile-div {
-  padding-top: 10vh;
-  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-hero-div {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#profile-hero-div img {
+  height: 200px;
+}
+.profile-div img {
+  height: 300px;
 }
 
 #gifts-profile-list {
@@ -44,34 +209,63 @@ header {
   flex-wrap: wrap;
 }
 
-.create-form, .new-gift-form, .auth-container {
+#profile-header {
+  text-align: center;
+  color: #cb0002;
+  width: 50%;
+}
+
+#profile-border {
+  width: 800px;
+  height: 1px;
+  border: solid 1px #979797;
+  position: relative;
+  margin: 20px auto;
+}
+
+.gift {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy-gifts-oval {
+  width: 100px;
+  height: 30px;
+  border-radius: 20.5px;
+  background-color: #cb0002;
+  font-family: Alpenstube;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-form, .new-gift-form, .auth-container, #edit-form,#login-form, #register-form {
   /* padding-top: 10vh; */
-  min-height: 90vh;
+  /* min-height: 90vh; */
   display: flex;
   flex-direction: column;
   text-align: left;
   align-items: center;
 }
 
-#edit-form {
-  padding-top: 10vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  align-items: center;
-}
-.new-gift-form {
+.new-gift-form, #edit-form {
   width: 50%;
 }
-.age img, #new-gift-img {
-  height: 250px;
-  width: 200px;
-  object-fit: cover;
-  /* width: 100%; */
-  margin: 20px;
+#new-gift-img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
 }
-
 
 /* Style inputs with type="text", select elements and textareas */
 input {
@@ -117,4 +311,8 @@ input[type=submit] {
 /* When moving the mouse over the submit button, add a darker green color */
 input:hover, textarea:hover {
   opacity: 1;
+}
+
+.green-color {
+  color: #25dd6a;
 }

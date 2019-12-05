@@ -1,22 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Logo from '../images/logo.jpg'
 
 export default function Header(props) {
   return (
     <header>
-      <h1><Link to='/' onClick={props.resetForm}>Gift Horse</Link></h1>
+      <Link to='/' onClick={props.resetForm}><img className="logo-img" src={Logo} /></Link>
       <div className="welcome-div">
         {props.currentUser
           ?
           <>
-            <p>Welcome {props.currentUser.username}!</p>
+
             <Link to={`/users/${props.currentUser.id}`}>
-            <button>My Profile</button>
+            My Profile
             </Link>
-            <button onClick={props.handleLogout}>Logout</button>
+            <button
+              className="Oval"
+              onClick={props.handleLogout}>Logout</button>
           </>
           :
-          <button onClick={props.handleLoginButton}>Login/Register</button>
+          <button onClick={props.handleLoginButton} className="Oval">Login/Register</button>
         }
       </div>
     </header>

@@ -12,7 +12,7 @@ const Login = (props) => {
         <>
           <h2>Login</h2>
           <hr />
-          <form onSubmit={(e) => {
+          <form id="login-form" onSubmit={(e) => {
             e.preventDefault();
             props.handleLogin();
           }} >
@@ -22,8 +22,9 @@ const Login = (props) => {
             <input name="password" type="password" value={props.formData.password} onChange={props.handleChange} />
             <hr />
             <button>Login</button>
-            <Link to="/register">Register</Link>
-          </form>
+            
+        </form>
+        <Link to="/register">Register</Link>
         </>
       {/* } */}
     </div>

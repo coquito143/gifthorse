@@ -7,7 +7,7 @@ const Register = (props) => {
     <div className="auth-container">
       <h2>Register</h2>
       <hr />
-      <form onSubmit={props.handleRegister} >
+      <form id="register-form" onSubmit={props.handleRegister} >
         {/* <p>First name:</p>
         <input name="first_name" type="text" value={props.formData.first_name} onChange={props.handleChange} /> */}
         <p>Email:</p>
