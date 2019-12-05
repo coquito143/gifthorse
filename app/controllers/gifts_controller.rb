@@ -9,6 +9,12 @@ class GiftsController < ApplicationController
     render json: @gifts, include: :ages, status: :ok
   end
 
+    # get '/ages/:age_id/gifts_by_price', to: 'gifts#index_by_age_sorted_by_price'
+    def index_by_age_sorted_by_price
+      @age = Age.find(params[:age_id])
+      @gifts = @age.gifts
+      render json: @gifts, include: :ages, status: :ok
+    end
   
   # get '/gifts', to: 'gifts#/index_by_user'
   def index_by_user

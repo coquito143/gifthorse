@@ -43,8 +43,14 @@ button {
 
 .material-icons {
   color: #cb0002;
-  font-size: 1.5em;
+  font-size: 2em;
   margin-right: 20px;
+}
+
+.material-icons:hover {
+  transform: scale(1.2);
+  border: 5px solid black;
+  border-radius: 15px;
 }
 
 /******** HEADER STYLING ********/
@@ -207,12 +213,15 @@ header {
 }
 .profile-div img {
   height: 300px;
+  width: 300px;
+  object-fit: contain;
 }
 
 #gifts-profile-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 #profile-header {
@@ -261,6 +270,39 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+
+}
+
+.edit-icon {
+  color: royalblue;
+}
+
+/******** GIFTS-BY-AGE STYLING ********/
+.price-box {
+  height: 400px;
+  width: 150px;
+  background-color: #25dd6a;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2vw;
+}
+
+.price-box h2 {
+  text-align: center;
+}
+
+.gifts-by-price-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  overflow: hidden;
+  width: 100%;
+  height: 450px;
 }
 
 /******** FORMS STYLING ********/

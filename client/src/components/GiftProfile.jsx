@@ -45,7 +45,7 @@ class GiftProfile extends React.Component {
                 <div className="edit-delete-icons">
                   <Link to={`/gifts/${gift.id}/edit`}>
                     {/* <button>Edit</button> */}
-                    <i class="material-icons">edit</i>
+                    <i class="material-icons edit-icon">edit</i>
                   </Link>
                   <i class="material-icons"
                     onClick={() => {

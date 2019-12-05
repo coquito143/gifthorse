@@ -136,7 +136,7 @@ class EditGiftForm extends React.Component {
           </label>
           <label>
           Price Range:
-          <select name="priceRange" value={this.state.priceRange} onChange={this.handleChange}>
+          <select name="price_range" value={this.state.price_range} onChange={this.handleChange}>
             <option value="<10">less than $10</option>
             <option value="10-20">$10-20</option>
             <option value="20-30">$20-30</option>
@@ -146,7 +146,7 @@ class EditGiftForm extends React.Component {
             <option value="100+">$100+</option>
           </select>
         </label>
-          <button>Edit Gift</button>
+          <button>Update</button>
         </form>
       </div>
     )

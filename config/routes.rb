@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/list_by_age', to: 'ages#index'
   get '/ages/:age_id/gifts', to: 'gifts#index_by_age'
+  get '/ages/:age_id/gifts_by_price', to: 'gifts#index_by_age_sorted_by_price'
   get '/gifts', to: 'gifts#index_by_user'
   get '/gifts/:id', to: 'gifts#index_single_gift'
 
