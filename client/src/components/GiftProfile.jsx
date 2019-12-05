@@ -27,14 +27,8 @@ class GiftProfile extends React.Component {
   render() {
     return (
       <div className="profile-div">
-        <Link to="/newgift">
-          <img
-            id="new-gift-img"
-            alt="Create a new gift"
-            src="https://image.flaticon.com/icons/png/512/14/14980.png"
-            className="plus-sign" />
-          <h2 className="green-color remove-top-margin">Add a new gift</h2>
-        </Link>
+
+
 
         <div id="gifts-profile-list">
           {
@@ -57,6 +51,17 @@ class GiftProfile extends React.Component {
               </div>
             ))
           }
+
+          <Link to="/newgift">
+            <div className="rainbow-wrapper" id="add-gift-div" >
+              <img
+                id="new-gift-img"
+                alt="Create a new gift"
+                src="https://image.flaticon.com/icons/png/512/14/14980.png"
+                className="plus-sign" />
+              <h2 className="remove-top-margin">Add a new gift</h2>
+            </div>
+          </Link>
         </div>
       </div>
     )

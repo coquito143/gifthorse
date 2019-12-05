@@ -32,9 +32,9 @@ export default class AgesList extends React.Component {
           {
             this.state.ages.map(age => (
               <div key={age.id} className="age">
-                <img src={imgArr[age.id-1]} alt="age image" />
-                <h3>Age: {age.age}</h3>
                 <Link to={`/gifts-by-age/${age.id}`}>
+                  <img src={imgArr[age.id - 1]} alt="age image" />
+                  <h3>Age: {age.age}</h3>
                   <button className="show-gifts-oval">Show Gifts</button>
                 </Link>
               </div>

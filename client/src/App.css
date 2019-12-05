@@ -161,11 +161,22 @@ header {
 }
 
 .age img, #new-gift-img {
-  height: 150px;
-  width: 150px;
-  margin: 50px 0 0 0;
   -webkit-transition: -webkit-transform .8s ease-in-out;
   transition: transform .8s ease-in-out;
+}
+
+#new-gift-img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+.age img {
+  margin: 50px 0 0 0;
+  height: 150px;
+  width: 150px;
 }
 
 .age img:hover, #new-gift-img:hover {
@@ -215,6 +226,18 @@ header {
   height: 300px;
   width: 300px;
   object-fit: contain;
+}
+
+#add-gift-div {
+  margin-top: 100px;
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 3px solid black;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #gifts-profile-list {
@@ -288,6 +311,7 @@ header {
   color: black;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin: 2vw;
 }
@@ -317,11 +341,6 @@ header {
 
 .new-gift-form, #edit-form {
   width: 50%;
-}
-#new-gift-img {
-  height: 150px;
-  width: 150px;
-  object-fit: contain;
 }
 
 /* Style inputs with type="text", select elements and textareas */
@@ -372,4 +391,46 @@ input:hover, textarea:hover {
 
 .green-color {
   color: #25dd6a;
+}
+
+.white-color {
+  color: white;
+}
+
+/******* RAINBOW BUTTON *******/
+.rainbow-wrapper { 
+  /* height: 100%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute; */
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
 }

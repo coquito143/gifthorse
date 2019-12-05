@@ -5,8 +5,8 @@ const Register = (props) => {
 
   return (
     <div className="auth-container">
-      <h2>Register</h2>
-      <hr />
+      <h1>Register</h1>
+      {/* <hr /> */}
       <form id="register-form" onSubmit={props.handleRegister} >
         {/* <p>First name:</p>
         <input name="first_name" type="text" value={props.formData.first_name} onChange={props.handleChange} /> */}
@@ -15,7 +15,7 @@ const Register = (props) => {
         <p>Password (6 character minimum):</p>
         <input name="password" type="password" value={props.formData.password} onChange={props.handleChange} />
         <hr/>
-        <button>Register</button>
+        <button>Submit</button>
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ const Login = (props) => {
     <div className="auth-container">
       {/* {this.props.currentUser && */}
         <>
-          <h2>Login</h2>
+          <h1>Login</h1>
           <hr />
           <form id="login-form" onSubmit={(e) => {
             e.preventDefault();
@@ -21,7 +21,7 @@ const Login = (props) => {
             <p>Password:</p>
             <input name="password" type="password" value={props.formData.password} onChange={props.handleChange} />
             <hr />
-            <button>Login</button>
+            <button>Submit</button>
             
         </form>
         <Link to="/register">Register</Link>
