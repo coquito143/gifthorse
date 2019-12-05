@@ -33,7 +33,7 @@ export default class GiftProfile extends React.Component {
             this.state.gifts.map(gift => (
               <div key={gift.id} className="gift">
                 <img src={gift.image_url} alt="gift image" />
-                <h3>{gift.name}</h3>
+                <h3 className="remove-top-margin">{gift.name}</h3>
                 <div className="buy-gifts-oval">
                   <a href={gift.amazon_url} target="_blank">Buy</a>
                 </div>

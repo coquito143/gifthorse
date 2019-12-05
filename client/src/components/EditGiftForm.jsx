@@ -12,7 +12,8 @@ class EditGiftForm extends React.Component {
         image_url: "",
         amazon_url: "",
         for_girls: false,
-        for_boys: false
+        for_boys: false,
+        price_range: "<10"
       },
       giftAge: 1
     }
@@ -28,7 +29,8 @@ class EditGiftForm extends React.Component {
         image_url: gift.image_url,
         amazon_url: gift.amazon_url,
         for_girls: gift.for_girls,
-        for_boys: gift.for_boys
+        for_boys: gift.for_boys,
+        price_range: gift.price_range
       },
       giftAge: gift.ages[0].age
     })
@@ -132,7 +134,18 @@ class EditGiftForm extends React.Component {
               <option value="12">12</option>
             </select>
           </label>
-
+          <label>
+          Price Range:
+          <select name="priceRange" value={this.state.priceRange} onChange={this.handleChange}>
+            <option value="<10">less than $10</option>
+            <option value="10-20">$10-20</option>
+            <option value="20-30">$20-30</option>
+            <option value="30-50">$30-50</option>
+            <option value="50-75">$50-75</option>
+            <option value="75-100">$75-100</option>
+            <option value="100+">$100+</option>
+          </select>
+        </label>
           <button>Edit Gift</button>
         </form>
       </div>

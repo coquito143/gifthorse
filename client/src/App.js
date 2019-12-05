@@ -36,7 +36,8 @@ class App extends Component {
         image_url: "",
         amazon_url: "",
         for_girls: false,
-        for_boys: false
+        for_boys: false,
+        price_range: "<10"
       },
       giftAge: 1,
       currentUser: null,
@@ -71,7 +72,10 @@ class App extends Component {
       giftForm: {
         name: "",
         image_url: "",
-        amazon_url: ""
+        amazon_url: "",
+        for_girls: false,
+        for_boys: false,
+        price_range: "<10"
       },
       giftAge: 1
     }))
@@ -140,7 +144,10 @@ class App extends Component {
       giftForm: {
         name: "",
         image_url: "",
-        amazon_url: ""
+        amazon_url: "",
+        for_girls: false,
+        for_boys: false,
+        price_range: "<10"
       },
       giftAge: 1
     })
@@ -162,6 +169,7 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/")
   }
 
   handleLogout = () => {

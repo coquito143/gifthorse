@@ -58,6 +58,18 @@ function CreateGift(props) {
             <option value="12">12</option>
           </select>
         </label>
+        <label>
+          Price Range:
+          <select name="priceRange" value={props.priceRange} onChange={props.handleFormChange}>
+            <option value="<10">less than $10</option>
+            <option value="10-20">$10-20</option>
+            <option value="20-30">$20-30</option>
+            <option value="30-50">$30-50</option>
+            <option value="50-75">$50-75</option>
+            <option value="75-100">$75-100</option>
+            <option value="100+">$100+</option>
+          </select>
+        </label>
         <button>Submit</button>
       </form>
     </div >

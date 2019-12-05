@@ -42,16 +42,18 @@ class GiftProfile extends React.Component {
               <div key={gift.id} className="gift">
                 <img src={gift.image_url} alt="gift image" />
                 <h3>{gift.name}</h3>
-
-                <Link to={`/gifts/${gift.id}/edit`}>
-                  <button>Edit</button>
-                </Link>
-
-                <button onClick={() => {
-                  this.props.deleteGift(gift.id);
-                  this.deleteUserGift(gift.id);
-                  this.props.history.push(`/users/${this.props.currentUser.id}`)
-                }}>Delete</button>
+                <div className="edit-delete-icons">
+                  <Link to={`/gifts/${gift.id}/edit`}>
+                    {/* <button>Edit</button> */}
+                    <i class="material-icons">edit</i>
+                  </Link>
+                  <i class="material-icons"
+                    onClick={() => {
+                      this.props.deleteGift(gift.id);
+                      this.deleteUserGift(gift.id);
+                      this.props.history.push(`/users/${this.props.currentUser.id}`)
+                    }}>delete</i>
+                </div>
               </div>
             ))
           }
