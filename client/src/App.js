@@ -67,6 +67,7 @@ class App extends Component {
   newGift = async (e) => {
     e.preventDefault();
     const gift = await createGift(this.state.giftForm, this.state.giftAge);
+    debugger;
     this.setState(prevState => ({
       gifts: [...prevState.gifts, gift],
       giftForm: {
@@ -84,7 +85,8 @@ class App extends Component {
   editGift = async () => {
     const { giftForm } = this.state
     //reminder to somehow pass age
-    await updateGift(giftForm.id, giftForm);
+    const response =await updateGift(giftForm.id, giftForm);
+    debugger;
     this.setState(prevState => (
       {
         gifts: prevState.gifts.map(gift => {
@@ -161,6 +163,7 @@ class App extends Component {
 
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
+    debugger;
     this.setState({ currentUser });
     this.props.history.push("/")
   }
@@ -168,12 +171,13 @@ class App extends Component {
   handleRegister = async (e) => {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
+    debugger;
     this.setState({ currentUser });
     this.props.history.push("/")
   }
 
   handleLogout = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("authToken");
     this.setState({
       currentUser: null
     })

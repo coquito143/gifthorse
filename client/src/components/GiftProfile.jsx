@@ -54,12 +54,7 @@ class GiftProfile extends React.Component {
 
           <Link to="/newgift">
             <div className="rainbow-wrapper" id="add-gift-div" >
-              <img
-                id="new-gift-img"
-                alt="Create a new gift"
-                src="https://image.flaticon.com/icons/png/512/14/14980.png"
-                className="plus-sign" />
-              <h2 className="remove-top-margin">Add a new gift</h2>
+              <h2 className="remove-top-margin"><span className="plus-sign">+</span> Add a new gift</h2>
             </div>
           </Link>
         </div>

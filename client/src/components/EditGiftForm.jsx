@@ -78,21 +78,26 @@ class EditGiftForm extends React.Component {
     const { name, image_url, amazon_url, for_girls, for_boys } = this.state.formData
     return (
       <div className="create-form">
-        <h1 className="green-color">Edit Gift</h1>
+        <h1 className="green-color remove-top-margin">Edit Gift</h1>
         <form id="edit-form" onSubmit={this.handleSubmit}>
-          <p>Name:</p>
-          <input
-            onChange={this.handleChange}
-            name="name" placeholder="Gift Name..."
-            value={name}
-          />
+          <div className="form-line">
+            <p>Name:</p>
+            <input
+              onChange={this.handleChange}
+              name="name" placeholder="Gift Name..."
+              value={name}
+            />
+          </div>
+        <div className="form-line">
           <p>Image URL:</p>
           <input
             onChange={this.handleChange}
             name="image_url"
             placeholder="URL for Gift Cover Image..."
             value={image_url}
-          />
+            />
+            </div>
+        <div className="form-line">
           <p>Amazon URL:</p>
           <input
             onChange={this.handleChange}
@@ -100,6 +105,8 @@ class EditGiftForm extends React.Component {
             placeholder="URL for Gift Cover Image..."
             value={amazon_url}
           />
+          </div>
+        <div className="form-line gender">
 
           <label>
             For Girls
@@ -117,9 +124,10 @@ class EditGiftForm extends React.Component {
               checked={for_boys ? "on" : ""}
               onChange={this.handleChange} />
           </label>
-          <label>
-            For Age:
-          <select name="giftAge" value={this.state.giftAge} onChange={this.handleChange}>
+          </div>
+          <p>Child's Age: </p>
+          <div class="select-wrapper">
+            <select name="giftAge" value={this.state.giftAge} onChange={this.handleChange}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -133,19 +141,27 @@ class EditGiftForm extends React.Component {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-          </label>
-          <label>
-          Price Range:
-          <select name="price_range" value={this.state.price_range} onChange={this.handleChange}>
-            <option value="<10">less than $10</option>
-            <option value="10-20">$10-20</option>
-            <option value="20-30">$20-30</option>
-            <option value="30-50">$30-50</option>
-            <option value="50-75">$50-75</option>
-            <option value="75-100">$75-100</option>
-            <option value="100+">$100+</option>
-          </select>
-        </label>
+            <span class="select-icon">
+              <i class="material-icons">
+                arrow_drop_down</i>
+            </span>
+          </div>
+          <p>Price Range: </p>
+          <div class="select-wrapper">
+            <select name="price_range" value={this.state.price_range} onChange={this.handleChange}>
+              <option value="<10">less than $10</option>
+              <option value="10-20">$10-20</option>
+              <option value="20-30">$20-30</option>
+              <option value="30-50">$30-50</option>
+              <option value="50-75">$50-75</option>
+              <option value="75-100">$75-100</option>
+              <option value="100+">$100+</option>
+            </select>
+            <span class="select-icon">
+              <i class="material-icons">
+                arrow_drop_down</i>
+            </span>
+          </div>
           <button>Update</button>
         </form>
       </div>
