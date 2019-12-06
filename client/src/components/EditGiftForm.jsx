@@ -22,7 +22,6 @@ class EditGiftForm extends React.Component {
   async componentDidMount() {
     // const giftId = parseInt(this.props.giftId)
     const gift = await readSingleGift(this.props.giftId);
-
     this.setState({
       formData: {
         name: gift.name,
@@ -70,12 +69,11 @@ class EditGiftForm extends React.Component {
     e.preventDefault()
     const formData = this.state.formData
     const response = await updateGift(this.props.giftId, formData)
-    debugger
     this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 
   render() {
-    const { name, image_url, amazon_url, for_girls, for_boys } = this.state.formData
+    const { name, image_url, amazon_url, for_girls, for_boys, price_range } = this.state.formData
     return (
       <div className="create-form">
         <h1 className="green-color remove-top-margin">Edit Gift</h1>
@@ -148,7 +146,7 @@ class EditGiftForm extends React.Component {
           </div>
           <p>Price Range: </p>
           <div class="select-wrapper">
-            <select name="price_range" value={this.state.price_range} onChange={this.handleChange}>
+            <select name="price_range" value={price_range} onChange={this.handleChange}>
               <option value="<10">less than $10</option>
               <option value="10-20">$10-20</option>
               <option value="20-30">$20-30</option>

@@ -1,14 +1,15 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3000'
+const testUrl = 'http://localhost:3000'
+const prodUrl = 'https://gift-horse.herokuapp.com/'
 
 const api = axios.create({
-  baseURL: baseUrl
+  baseURL: prodUrl
 })
 
 export const loginUser = async (loginData) => {
   const resp = await api.post('/auth/login', loginData)
-  debugger;
+  debugger
   localStorage.setItem('authToken', resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
   return resp.data.user

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { readUserGifts } from '../services/api-helper';
 import { withRouter } from 'react-router';
+import RockingHorse from '../images/rocking-horse.png'
 
 class GiftProfile extends React.Component {
   constructor(props) {
@@ -27,9 +28,10 @@ class GiftProfile extends React.Component {
   render() {
     return (
       <div className="profile-div">
-
-
-
+        <div id="profile-heading-div">
+          <img src={RockingHorse} alt="rockinghorse-image" />
+          <h1>My Gift Recommendations</h1>
+        </div>
         <div id="gifts-profile-list">
           {
             this.state.gifts.map(gift => (
@@ -51,12 +53,13 @@ class GiftProfile extends React.Component {
               </div>
             ))
           }
-
-          <Link to="/newgift">
-            <div className="rainbow-wrapper" id="add-gift-div" >
-              <h2 className="remove-top-margin"><span className="plus-sign">+</span> Add a new gift</h2>
-            </div>
-          </Link>
+          <div className="new-gift-div">
+            <Link to="/newgift">
+              <div className="rainbow-wrapper" id="add-gift-div" >
+                <h2 className="remove-top-margin"><span className="plus-sign">+</span> Add a new gift</h2>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     )

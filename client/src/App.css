@@ -155,9 +155,8 @@ header {
   top: -80px;
 }
 
-#ages-heading-div img {
+#ages-heading-div img, #profile-heading-div img {
   height: 100px;
-  margin-right: 20px;
 }
 
 .age img, #new-gift-img {
@@ -211,6 +210,20 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 3vw;
+}
+
+#profile-heading-div {
+  color: #cb0002;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#profile-heading-div {
+  width: 150px;
 }
 
 #profile-hero-div {
@@ -244,6 +257,7 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   width: 100%;
 }
 
@@ -259,6 +273,10 @@ header {
   border: solid 1px #979797;
   position: relative;
   margin: 20px auto;
+}
+
+.new-gift-div {
+  margin-bottom: 20vh;
 }
 
 .gift {

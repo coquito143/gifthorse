@@ -163,7 +163,6 @@ class App extends Component {
 
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
-    debugger;
     this.setState({ currentUser });
     this.props.history.push("/")
   }
