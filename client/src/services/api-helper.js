@@ -4,22 +4,29 @@ const testUrl = 'http://localhost:3000'
 const prodUrl = 'https://gift-horse.herokuapp.com/'
 
 const api = axios.create({
-  baseURL: prodUrl
+  baseURL: testUrl
 })
 
 export const loginUser = async (loginData) => {
-  const resp = await api.post('/auth/login', loginData)
-  debugger
-  localStorage.setItem('authToken', resp.data.token);
-  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
-  return resp.data.user
+  try {
+    const resp = await api.post('/auth/login', loginData)
+    localStorage.setItem('authToken', resp.data.token);
+    api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
+    return resp.data.user
+  } catch (e) {
+    return 500;
+  }
 }
 
 export const registerUser = async (registerData) => {
-  const resp = await api.post('/users/', { user: registerData })
-  localStorage.setItem('authToken', resp.data.token);
-  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
-  return resp.data.user
+  try {
+    const resp = await api.post('/users/', { user: registerData })
+    localStorage.setItem('authToken', resp.data.token);
+    api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
+    return resp.data.user
+  } catch (e) {
+    return 500;
+  }
 }
 
 export const verifyUser = async () => {
@@ -53,7 +60,7 @@ export const readGiftsbyAge = async (id) => {
   return resp.data
 }
 
-export const readSingleGift  = async (id) => {
+export const readSingleGift = async (id) => {
   const resp = await api.get(`/gifts/${id}`)
   return resp.data
 }

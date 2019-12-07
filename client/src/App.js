@@ -163,16 +163,25 @@ class App extends Component {
 
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
-    this.setState({ currentUser });
-    this.props.history.push("/")
+    if (currentUser === 500) {
+      return 500;
+    }
+    else {
+      this.setState({ currentUser });
+      this.props.history.push("/")
+    }
   }
 
   handleRegister = async (e) => {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
-    debugger;
-    this.setState({ currentUser });
-    this.props.history.push("/")
+    if (currentUser === 500) {
+      return 500;
+    }
+    else {
+      this.setState({ currentUser });
+      this.props.history.push("/")
+    }
   }
 
   handleLogout = () => {

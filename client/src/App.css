@@ -30,15 +30,23 @@ button {
   width: 100px;
   height: 30px;
   border-radius: 20.5px;
-  background-color: #cb0002;
+  /* background-color: #cb0002; */
+  background-color: #25dd6a;
   font-family: Alpenstube;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.25px;
   color: #ffffff;
+}
+
+form button:hover {
+  background-color: white;
+  color: #25dd6a;
+  border: 5px solid black;
+  transition: all 0.5s ease;
 }
 
 .material-icons {
@@ -383,6 +391,10 @@ form button {
   width: 200px;
 }
 
+.register-link {
+  /* text-decoration: underline; */
+  color: blue;
+}
 
 /* Style inputs with type="text", select elements and textareas */
 input {
@@ -432,6 +444,10 @@ input:hover, textarea:hover {
 
 .green-color {
   color: #25dd6a;
+}
+
+.red-color {
+  color:  #cb0002;
 }
 
 .white-color {
