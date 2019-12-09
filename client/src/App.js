@@ -84,9 +84,7 @@ class App extends Component {
 
   editGift = async () => {
     const { giftForm } = this.state
-    //reminder to somehow pass age
-    const response =await updateGift(giftForm.id, giftForm);
-    debugger;
+    await updateGift(giftForm.id, giftForm);
     this.setState(prevState => (
       {
         gifts: prevState.gifts.map(gift => {
@@ -162,6 +160,7 @@ class App extends Component {
   }
 
   handleLogin = async () => {
+    // e.preventDefault();
     const currentUser = await loginUser(this.state.authFormData);
     if (currentUser === 500) {
       return 500;
@@ -173,7 +172,7 @@ class App extends Component {
   }
 
   handleRegister = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     if (currentUser === 500) {
       return 500;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GiftProfile from './GiftsByAge';
+import axios from 'axios'
 
 // This component handles our login form and has a link to the register form
 export default class Login extends React.Component {
@@ -11,11 +12,15 @@ export default class Login extends React.Component {
     }
   }
 
-  logon = () => {
-    const response = this.props.handleLogin();
-    this.setState({
-      response
-    })
+  logon = async () => {
+    const response = await this.props.handleLogin();
+      if (response === 500) {
+        this.setState({
+          response
+        })
+      // }
+    }
+  
   }
 
 
@@ -23,7 +28,6 @@ export default class Login extends React.Component {
     return (
 
       <div className="auth-container">
-        {/* {this.props.currentUser && */}
         <>
           <h1>Login</h1>
           <hr />

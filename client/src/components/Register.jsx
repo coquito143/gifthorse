@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'
 
 // This component handles our register form
 export default class Register extends React.Component {
@@ -9,8 +10,8 @@ export default class Register extends React.Component {
     }
   }
 
-  register = () => {
-    const response = this.props.handleRegister();
+  register = async () => {
+    const response = await this.props.handleRegister();
     this.setState({
       response
     })
@@ -21,7 +22,10 @@ export default class Register extends React.Component {
       <div className="auth-container">
         <h1>Register</h1>
     
-        <form id="register-form" onSubmit={this.register} >
+        <form id="register-form" onSubmit={(e) => {
+          e.preventDefault();
+          this.register();
+        }} >
           <p>Email:</p>
           <input name="email" type="text" value={this.props.formData.email} onChange={this.props.handleChange} />
           <p>Password (6 character minimum):</p>
@@ -29,7 +33,7 @@ export default class Register extends React.Component {
           <hr />
           <button>Submit</button>
           {this.state.response &&
-              <h3 className="red-color">Invalid Credentials. Password must be 6 characters minimum and email must be unique.</h3>}
+              <h3 className="red-color">Invalid Credentials. Password must be 6 characters minimum and email must be unique</h3>}
         </form>
       </div>
     );

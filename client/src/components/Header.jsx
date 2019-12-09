@@ -19,7 +19,7 @@ export default function Header(props) {
               onClick={props.handleLogout}>Logout</button>
           </>
           :
-          <button onClick={props.handleLoginButton} className="Oval rainbow-wrapper">Login/Register</button>
+          <button onClick={props.handleLoginButton} className="Oval">Login/Register</button>
         }
       </div>
     </header>
