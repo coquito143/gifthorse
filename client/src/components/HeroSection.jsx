@@ -39,7 +39,7 @@ export default function HeroSection() {
         <div id="gallery-div">
           <Gallery
             style={{
-              height: "40vh",
+              height: "400px",
               width: "100%",
               margin: 0
           
