@@ -319,6 +319,17 @@ header {
   align-items: center;
 }
 
+.gift h3 {
+  margin: 0 auto;
+  height: 100px;
+  width: 250px;
+  text-align: center;
+}
+
+.gift img {
+  margin-top: 20px;
+}
+
 .buy-gifts-oval {
   width: 100px;
   height: 30px;
@@ -356,7 +367,7 @@ header {
 
 /******** GIFTS-BY-AGE STYLING ********/
 .price-box {
-  height: 400px;
+  height: 450px;
   width: 150px;
   background-color: #25dd6a;
   color: black;

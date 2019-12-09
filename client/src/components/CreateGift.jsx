@@ -70,7 +70,7 @@ function CreateGift(props) {
         </div>
         <p>Price Range: </p>
         <div class="select-wrapper">
-          <select name="priceRange" value={props.priceRange} onChange={props.handleFormChange}>
+          <select name="price_range" value={props.price_range} onChange={props.handleFormChange}>
             <option value="<10">less than $10</option>
             <option value="10-20">$10-20</option>
             <option value="20-30">$20-30</option>

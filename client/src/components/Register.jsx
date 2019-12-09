@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios'
 
 // This component handles our register form
 export default class Register extends React.Component {

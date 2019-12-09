@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-
+import './App.css';
 import AgesList from './components/AgesList'
 import GiftProfile from './components/GiftProfile';
 import GiftsByAge from './components/GiftsByAge'
-// import GiftPage from './components/GiftPage';
 import EditGiftForm from './components/EditGiftForm'
 import CreateGift from './components/CreateGift'
 import Login from './components/Login'
 import Register from './components/Register'
-import './App.css';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection'
 
@@ -23,7 +21,6 @@ import {
   registerUser,
   verifyUser
 } from './services/api-helper'
-
 
 
 class App extends Component {

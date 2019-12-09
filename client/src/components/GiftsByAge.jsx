@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { readGiftsbyAge } from '../services/api-helper';
 import imgArr from '../images/images'
 
@@ -47,9 +46,6 @@ export default class GiftProfile extends React.Component {
       }
     })
     
-    // this.setState({
-    //   gifts
-    // })
   }
 
   render() {
@@ -70,7 +66,7 @@ export default class GiftProfile extends React.Component {
                 this.state.gifts10.map(gift => (
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
-                    <h3 className="remove-top-margin">{gift.name}</h3>
+                    <h3 className="remove-top-margin gift-name">{gift.name}</h3>
                     <div className="buy-gifts-oval">
                       <a href={gift.amazon_url} target="_blank">Buy</a>
                     </div>
