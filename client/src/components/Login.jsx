@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Horse from '../images/horse.png'
 import GiftProfile from './GiftsByAge';
 import axios from 'axios'
 
@@ -14,13 +15,13 @@ export default class Login extends React.Component {
 
   logon = async () => {
     const response = await this.props.handleLogin();
-      if (response === 500) {
-        this.setState({
-          response
-        })
+    if (response === 500) {
+      this.setState({
+        response
+      })
       // }
     }
-  
+
   }
 
 
@@ -51,11 +52,15 @@ export default class Login extends React.Component {
             />
             <button>Submit</button>
             {this.state.response &&
-              <h3 className="red-color">Invalid Credentials</h3>}
+              <div id="invalid-response-div">
+                <img id="invalid-response-img" src={Horse} alt="hero-image" />
+                <h3 className="red-color">NEIGH!!! Something seems wrong with that combination!</h3>
+              </div>
+            }
           </form>
           <Link className="register-link" to="/register"><h3>Register here</h3></Link>
         </>
-     
+
       </div>
     );
   }

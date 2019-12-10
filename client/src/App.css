@@ -24,13 +24,10 @@ a {
 }
 
 button {
-  font-family: 'AbjectFailure', cursive;
-  font-size: 1em;
   margin: 1vw;
   width: 100px;
   height: 30px;
   border-radius: 20.5px;
-  /* background-color: #cb0002; */
   background-color: #25dd6a;
   font-family: Alpenstube;
   font-size: 1em;
@@ -42,11 +39,17 @@ button {
   color: #ffffff;
 }
 
-form button:hover {
-  background-color: white;
+
+.green-color {
   color: #25dd6a;
-  border: 5px solid black;
-  transition: all 0.5s ease;
+}
+
+.red-color {
+  color:  #cb0002;
+}
+
+.white-color {
+  color: white;
 }
 
 .material-icons {
@@ -135,7 +138,7 @@ header {
 
 #hero-text h1 {
     font-family: AbjectFailure;
-    font-size: 42px;
+    font-size: 2.5em;
     line-height: 1.21;
     color: #cb0002;
 
@@ -143,7 +146,8 @@ header {
 
 #hero-text-h2 {
   font-family: Alpenstube;
-  font-size: 23px;
+  font-size: 2em;
+  font-weight: normal;
   color: black;
   padding-left: 20px;
   padding-right: 20px;
@@ -164,17 +168,24 @@ header {
 /******** GIFT BY AGE STYLING ********/
 .show-gifts-oval {
   width: 153px;
-  height: 41px;
+  height: 50px;
   border-radius: 20.5px;
   background-color: #cb0002;
   font-family: Alpenstube;
-  font-size: 23px;
+  font-size: 1.2em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.57px;
   color: #ffffff;
+}
+
+.show-gifts-oval:hover {
+  background-color: white;
+  color: #cb0002;
+  border: 5px solid black;
+  transition: all 0.5s ease;
 }
 
 #ages-heading-div {
@@ -272,6 +283,10 @@ header {
   height: 300px;
   width: 300px;
   object-fit: contain;
+}
+
+#hero-horse img {
+  margin-top: 40px;
 }
 
 #add-gift-div {
@@ -392,13 +407,19 @@ header {
 }
 
 /******** FORMS STYLING ********/
+
 .create-form, .new-gift-form, .auth-container, #edit-form,#login-form, #register-form {
-  /* padding-top: 10vh; */
-  /* min-height: 90vh; */
   display: flex;
   flex-direction: column;
   text-align: left;
   align-items: center;
+}
+
+form button:hover {
+  background-color: white;
+  color: #25dd6a;
+  border: 5px solid black;
+  transition: all 0.5s ease;
 }
 
 .new-gift-form, #edit-form {
@@ -428,7 +449,6 @@ form button {
 }
 
 .register-link {
-  /* text-decoration: underline; */
   color: blue;
 }
 
@@ -439,7 +459,6 @@ input {
   padding: 10px; /* Some padding */ 
   margin: 10px;
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  /* opacity: 0.6; */
   cursor: pointer;
 } 
 
@@ -451,7 +470,6 @@ textarea {
   box-sizing: border-box;
   resize: none;
   border-radius: 4px;
-  /* opacity: 0.6; */
   cursor: pointer;
 }
 
@@ -459,7 +477,6 @@ textarea {
 input[type=submit] {
   background-color: #818BA6;
   color: black;
-  /* padding: 19px 20px; */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -472,22 +489,8 @@ input[type=submit] {
   font-size: .5em;
 }
 
-/* When moving the mouse over the submit button, add a darker green color */
 input:hover, textarea:hover {
-  /* opacity: 1; */
   border-block-color: #3B87FD;
-}
-
-.green-color {
-  color: #25dd6a;
-}
-
-.red-color {
-  color:  #cb0002;
-}
-
-.white-color {
-  color: white;
 }
 
 #register-form h3 {
@@ -497,15 +500,17 @@ input:hover, textarea:hover {
 #register-form input,#login-form input {
   width: 350px;
 }
+
+#invalid-response-div {
+  display: flex;
+}
+
+#invalid-response-div img {
+  height: 200px;
+}
+
 /******* RAINBOW BUTTON *******/
 .rainbow-wrapper { 
-  /* height: 100%;
-  width: 100%;
-  left:0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute; */
 background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 background-size: 1800% 1800%;
 
@@ -591,4 +596,59 @@ select {
   border:1px solid #C8C8C8;
   border-right:none;
   pointer-events:none;
+}
+
+/* MEDIA QUERY FOR SMARTPHONES */
+@media only screen 
+  and (max-width: 560px){
+    html {
+      font-size: 14px;
+    }
+ 
+
+  #gallery-div {
+    display: none;
+  }
+
+  #ages-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #hero-section {
+    grid-template-columns: 45% 55%;
+  }
+
+  .Oval {
+    width: 120px;
+  }
+
+  #register-form input, #login-form input {
+    width: 250px;
+  }
+
+  .logo-img {
+    width: 120px;
+    height: 60px;
+  }
+
+  #profile-hero-div img {
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+  }
+
+  #profile-header {
+    width: 80%;
+    margin: 0 auto;
+    text-align: start;
+    line-height: 120%;
+  }
+
+  #profile-header h1{
+    font-size: 1.5em;
+  }
+
 }
