@@ -1,11 +1,16 @@
 class GiftsController < ApplicationController
   before_action :set_gift, only: [:update, :destroy, :index_single_gift]
-  before_action :authorize_request, except: %i[index_by_age]
+  before_action :authorize_request, except: [:index_by_age, :all_gifts]
 
   # get '/ages/:age_id/gifts', to: 'gifts#index_by_age'
   def index_by_age
     @age = Age.find(params[:age_id])
     @gifts = @age.gifts
+    render json: @gifts, include: :ages, status: :ok
+  end
+
+  def all_gifts
+    @gifts = Gift.all
     render json: @gifts, include: :ages, status: :ok
   end
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Horse from '../images/horse.png'
 
 // This component handles our register form
 export default class Register extends React.Component {
@@ -20,7 +21,7 @@ export default class Register extends React.Component {
     return (
       <div className="auth-container">
         <h1>Register</h1>
-    
+
         <form id="register-form" onSubmit={(e) => {
           e.preventDefault();
           this.register();
@@ -32,7 +33,13 @@ export default class Register extends React.Component {
           <hr />
           <button>Submit</button>
           {this.state.response &&
-              <h3 className="red-color">Invalid Credentials. Password must be 6 characters minimum and email must be unique</h3>}
+            <div id="invalid-response-div">
+              <img id="invalid-response-img" src={Horse} alt="hero-image" />
+              <h3 className="red-color">NEIGH!!! Something seems wrong with that combination! The password must have 6 characters minimum and/or email may already be in the system</h3>
+            </div>
+          }
+
+
         </form>
       </div>
     );

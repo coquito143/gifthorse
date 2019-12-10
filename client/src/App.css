@@ -132,21 +132,27 @@ header {
 /******** HERO STYLING ********/
 #hero-section {
   display: grid;
-  grid-template-columns: 15% 25% 60%;
+  grid-template-columns: 165px 325px 1fr;
   text-align: center;
 }
 
+
+#hero-text {
+  height: 400px;
+}
+
 #hero-text h1 {
-    font-family: AbjectFailure;
-    font-size: 2.5em;
-    line-height: 1.21;
-    color: #cb0002;
+  font-family: AbjectFailure;
+  font-size: 2.2em;
+  line-height: 1.21;
+  color: #cb0002;
+  margin-bottom: 0;
 
 }
 
 #hero-text-h2 {
   font-family: Alpenstube;
-  font-size: 2em;
+  font-size: 1.7em;
   font-weight: normal;
   color: black;
   padding-left: 20px;
@@ -162,6 +168,10 @@ header {
 }
 
 .Gallery__Indicators {
+  display: none !important;
+}
+
+.Gallery__NavigationArrow {
   display: none !important;
 }
 
@@ -503,10 +513,15 @@ input:hover, textarea:hover {
 
 #invalid-response-div {
   display: flex;
+  width: 700px;
 }
 
 #invalid-response-div img {
   height: 200px;
+}
+
+#invalid-response-div h3 {
+  width: 100%
 }
 
 /******* RAINBOW BUTTON *******/

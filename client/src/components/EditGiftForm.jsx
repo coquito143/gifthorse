@@ -123,7 +123,7 @@ class EditGiftForm extends React.Component {
           </label>
           </div>
           <p>Child's Age: </p>
-          <div class="select-wrapper">
+          <div className="select-wrapper">
             <select name="giftAge" value={this.state.giftAge} onChange={this.handleChange}>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -138,13 +138,13 @@ class EditGiftForm extends React.Component {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <span class="select-icon">
-              <i class="material-icons">
+            <span className="select-icon">
+              <i className="material-icons">
                 arrow_drop_down</i>
             </span>
           </div>
           <p>Price Range: </p>
-          <div class="select-wrapper">
+          <div className="select-wrapper">
             <select name="price_range" value={price_range} onChange={this.handleChange}>
               <option value="<10">less than $10</option>
               <option value="10-20">$10-20</option>
@@ -154,8 +154,8 @@ class EditGiftForm extends React.Component {
               <option value="75-100">$75-100</option>
               <option value="100+">$100+</option>
             </select>
-            <span class="select-icon">
-              <i class="material-icons">
+            <span className="select-icon">
+              <i className="material-icons">
                 arrow_drop_down</i>
             </span>
           </div>
