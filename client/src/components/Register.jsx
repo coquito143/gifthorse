@@ -35,7 +35,7 @@ export default class Register extends React.Component {
           {this.state.response &&
             <div id="invalid-response-div">
               <img id="invalid-response-img" src={Horse} alt="hero-image" />
-              <h3 className="red-color">NEIGH!!! Something seems wrong with that combination! The password must have 6 characters minimum and/or email may already be in the system</h3>
+              <h3 className="red-color">NEIGH! Something seems wrong with that combination. The password must have 6 characters minimum and/or email may already be in the system</h3>
             </div>
           }
 

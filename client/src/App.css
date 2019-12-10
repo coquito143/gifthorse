@@ -626,10 +626,10 @@ select {
     display: none;
   }
 
-  #border {
+  #border, #profile-border {
     width: 300px;
   }
-  
+
   #ages-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -668,4 +668,21 @@ select {
     font-size: 1.5em;
   }
 
+  .price-box {
+    height: 40px;
+    width: 90%;
+  }
+
+  .gifts-by-price-div {
+    justify-content: center;
+    height: 100%;
+  }
+
+  .gift h3 {
+    height: 50px;
+  }
+
+  .buy-gifts-oval {
+    margin-bottom: 20px;
+  }
 }
