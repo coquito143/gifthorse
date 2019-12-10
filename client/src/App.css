@@ -627,14 +627,11 @@ select {
   }
 
   #ages-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
 
   #hero-section {
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 45% 55% 0;
   }
 
   .Oval {
