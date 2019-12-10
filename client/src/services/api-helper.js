@@ -4,7 +4,7 @@ const testUrl = 'http://localhost:3000'
 const prodUrl = 'https://gift-horse.herokuapp.com/'
 
 const api = axios.create({
-  baseURL: testUrl
+  baseURL: prodUrl
 })
 
 export const loginUser = async (loginData) => {
