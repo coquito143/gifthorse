@@ -626,8 +626,12 @@ select {
     display: none;
   }
 
+  #border {
+    width: 300px;
+  }
+  
   #ages-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   #hero-section {
