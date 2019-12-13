@@ -68,9 +68,11 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin gift-name">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
-                      <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    
+                    <a href={gift.amazon_url} target="_blank">
+                      <button className="buy-gifts-oval">Buy</button>
+                    </a>
+                    
                   </div>
                 ))
               }
@@ -84,9 +86,11 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
-                      <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    
+                    <a href={gift.amazon_url} target="_blank">
+                      <button className="buy-gifts-oval">Buy</button>
+                    </a>
+                    
                   </div>
                 ))
               }
@@ -100,9 +104,9 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
+                    <button className="buy-gifts-oval">
                       <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    </button>
                   </div>
                 ))
               }
@@ -116,9 +120,9 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
+                    <button className="buy-gifts-oval">
                       <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    </button>
                   </div>
                 ))
               }
@@ -132,9 +136,9 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
+                    <button className="buy-gifts-oval">
                       <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    </button>
                   </div>
                 ))
               }
@@ -148,9 +152,9 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
+                    <button className="buy-gifts-oval">
                       <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    </button>
                   </div>
                 ))
               }
@@ -164,9 +168,9 @@ export default class GiftProfile extends React.Component {
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>
-                    <div className="buy-gifts-oval">
+                    <button className="buy-gifts-oval">
                       <a href={gift.amazon_url} target="_blank">Buy</a>
-                    </div>
+                    </button>
                   </div>
                 ))
               }

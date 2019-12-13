@@ -191,7 +191,7 @@ header {
   color: #ffffff;
 }
 
-.show-gifts-oval:hover {
+.show-gifts-oval:hover, .gift button:hover {
   background-color: white;
   color: #cb0002;
   border: 5px solid black;
