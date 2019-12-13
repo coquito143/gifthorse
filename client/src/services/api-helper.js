@@ -4,7 +4,7 @@ const testUrl = 'http://localhost:3000'
 const prodUrl = 'https://gift-horse.herokuapp.com/'
 
 const api = axios.create({
-  baseURL: testUrl
+  baseURL: prodUrl
 })
 
 export const loginUser = async (loginData) => {
@@ -42,7 +42,11 @@ export const verifyUser = async () => {
 export const createGift = async (data, age) => {
   age = parseInt(age);
   const resp = await api.post(`/ages/${age}/gifts`, { gift: data })
-  
+  return resp.data
+}
+
+export const readAllAges = async () => {
+  const resp = await api.get('/list_by_age');
   return resp.data
 }
 

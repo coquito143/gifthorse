@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import RockingHorse from '../images/rocking-horse.png'
 import imgArr from '../images/images'
+import { readAllAges } from '../services/api-helper'
 
 export default class AgesList extends React.Component {
   constructor() {
@@ -13,8 +14,7 @@ export default class AgesList extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await axios.get('http://localhost:3000/list_by_age')
-    const ages = response.data
+    const ages = await readAllAges();
     this.setState({
       ages
     })
