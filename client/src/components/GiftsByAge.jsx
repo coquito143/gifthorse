@@ -19,6 +19,7 @@ export default class GiftProfile extends React.Component {
 
   async componentDidMount() {
     const gifts = await readGiftsbyAge(this.props.ageId);
+   
     gifts.map(gift => {
       switch (gift.price_range) {
         case "<10": this.setState(prevState => ({
@@ -112,6 +113,54 @@ export default class GiftProfile extends React.Component {
               <div className="price-box"><h2>$30-50</h2></div>
               {
                 this.state.gifts50.map(gift => (
+                  <div key={gift.id} className="gift">
+                    <img src={gift.image_url} alt="gift image" />
+                    <h3 className="remove-top-margin">{gift.name}</h3>
+                    <div className="buy-gifts-oval">
+                      <a href={gift.amazon_url} target="_blank">Buy</a>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>}
+          
+            {!!this.state.gifts75.length &&
+            <div className="gifts-by-price-div">
+              <div className="price-box"><h2>$50-75</h2></div>
+              {
+                this.state.gifts75.map(gift => (
+                  <div key={gift.id} className="gift">
+                    <img src={gift.image_url} alt="gift image" />
+                    <h3 className="remove-top-margin">{gift.name}</h3>
+                    <div className="buy-gifts-oval">
+                      <a href={gift.amazon_url} target="_blank">Buy</a>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>}
+          
+            {!!this.state.gifts100.length &&
+            <div className="gifts-by-price-div">
+              <div className="price-box"><h2>$75-100</h2></div>
+              {
+                this.state.gifts100.map(gift => (
+                  <div key={gift.id} className="gift">
+                    <img src={gift.image_url} alt="gift image" />
+                    <h3 className="remove-top-margin">{gift.name}</h3>
+                    <div className="buy-gifts-oval">
+                      <a href={gift.amazon_url} target="_blank">Buy</a>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>}
+          
+            {!!this.state.gifts200.length &&
+            <div className="gifts-by-price-div">
+              <div className="price-box"><h2>$100+</h2></div>
+              {
+                this.state.gifts200.map(gift => (
                   <div key={gift.id} className="gift">
                     <img src={gift.image_url} alt="gift image" />
                     <h3 className="remove-top-margin">{gift.name}</h3>

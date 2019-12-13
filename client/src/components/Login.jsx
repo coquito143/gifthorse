@@ -54,7 +54,7 @@ export default class Login extends React.Component {
             {this.state.response &&
               <div id="invalid-response-div">
                 <img id="invalid-response-img" src={Horse} alt="hero-image" />
-                <h3 className="red-color">NEIGH! Something seems wrong with that combination!</h3>
+                <h3 className="red-color">NEIGH! Something seems wrong with that combination</h3>
               </div>
             }
           </form>

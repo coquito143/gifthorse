@@ -49,7 +49,7 @@ class GiftsController < ApplicationController
   def update
     if @gift.user == @current_user
       if @gift.update(gift_params)
-        render json: @gift
+        render json: @gift, include: :ages
       else
         render json: @gift.errors, status: :unprocessable_entity
       end
